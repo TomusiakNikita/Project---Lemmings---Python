@@ -2,7 +2,19 @@ Dans la classe Jeu, j’ai eu des difficultés à interpréter le tableau issu d
 Le problème venait de la transformation des lignes du fichier en structure exploitable sans perdre la mise en forme.
 J’ai résolu cela en lisant chaque ligne, en supprimant le retour à la ligne et en la convertissant en liste de caractères, afin d’obtenir un tableau à deux dimensions fidèle à la carte.
 
+def __init__(self, Carte):
+        self.grotte = []
+        # Lecture du fichier carte et création de la grotte (tableau 2D)
+        with open(Carte, "r") as file:
+            for i in file:
+                # Suppression du caractère de retour à la ligne si présent
+                if i and i[-1]== '\n': # Vérifie si la ligne n'est pas vide et si le dernier caractère est un retour à la ligne
+                    # Si oui, enlève le dernier caractère (le retour à la ligne) de la chaîne
+                    i = i[:-1]
+                self.grotte.append(list(i))
+
 J’ai aussi rencontré des difficultés pour déterminer la position de départ des lemmings.
 La solution consiste à repérer la première colonne libre sur la première ligne, puis à descendre dans cette colonne jusqu’à trouver la première case vide sous un mur.
 
 Ces étapes ont permis une interprétation correcte de la carte et une position de départ fiable pour les lemmings.
+
