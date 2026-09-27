@@ -1,30 +1,56 @@
 # Lemmings — Python Project
 
-A Python implementation inspired by the classic Lemmings game, developed as a Computer Science project.
+A command-line Python simulation inspired by the classic **Lemmings** game, created as a Computer Science school project.
 
-## About
+The project models a cave as a 2D grid and simulates lemmings moving through it. Lemmings fall when there is free space below them, move horizontally when supported, reverse direction when blocked, and leave the simulation when they reach the exit.
 
-The project explores object-oriented programming, game logic, algorithms, map representation, and interaction between different game entities.
+## What the project demonstrates
 
-## Features
+- Object-oriented programming with separate game, lemming, and cell responsibilities
+- Parsing a text file into a 2D map
+- Grid-based movement and collision logic
+- State management for multiple moving entities
+- Algorithmic problem solving
+- Command-line interaction and game-loop logic
 
-- Lemming character behavior
-- Game and map logic
-- Different terrain/cell states
-- Movement and interaction rules
-- Algorithmic solutions for gameplay problems
+## How it works
 
-## Tech
+The map is loaded from `grotte.txt`.
 
-- Python
-- Object-Oriented Programming
-- Algorithms
-- Data structures
+Terrain symbols:
 
-## What I learned
+- `#` — wall
+- space — free cell
+- `O` — exit
+- `>` / `<` — lemming moving right or left
 
-This project helped me practice structuring a larger Python program, separating responsibilities between classes, implementing game logic, and solving algorithmic problems.
+During the simulation:
 
-## Project files
+- press `l` to add a lemming
+- press **Enter** to advance one turn
+- press `q` to quit and display the game statistics
 
-The repository includes the source code as well as the original project documentation.
+## Run
+
+Requirements:
+
+- Python 3.10+ recommended
+- No third-party packages required
+
+Clone the repository and run:
+
+```bash
+python lemmings.py
+```
+
+## Project structure
+
+- `lemmings.py` — cleaned, portable version of the simulation
+- `grotte.txt` — sample cave map
+- `Project NSI - Lemmings version final.py` — original final school-project version
+- `Projet NSI - Lemmings.pdf` — original project documentation
+- other Python files — earlier iterations and working drafts
+
+## Notes
+
+The repository intentionally keeps the original school-project files alongside the cleaned portfolio version so the development process remains visible.
